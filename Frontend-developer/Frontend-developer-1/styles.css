@@ -1,4 +1,6 @@
 
+        /* Estilos gnericos*/
+
          :root{
             --Very-ight-pink: #C7C7C7;
             --Hospital-green: #ACD9B2;
@@ -9,6 +11,7 @@
             --md: 16px;
             --lg: 18px;
         }
+        /*Estilos Nav-bar*/
         body{
             margin: 0;
             font-family: 'Quicksand', sans-serif;
@@ -81,6 +84,7 @@
             right: -3px;
             top : -6px;
         }
+        /* Estilos Menu Desktop*/
         .desktop-menu{
             position: absolute;
             top: 60px;
@@ -123,6 +127,127 @@
         .inactive{
             display: none;
         }
+        /*Menu Mobile*/
+          .Mobil-menu{
+           background-color: var(--White);
+         padding: 24px;  
+         position: absolute;
+         top: 60px; 
+        
+        }
+        .Mobil-menu a{
+            text-decoration: none;
+            color: var(--black);
+            font-weight: bold;
+           /* margin-bottom: 24px;*/
+        }
+        .Mobil-menu ul {
+            padding: 0;
+            list-style: none;
+            margin: 24px 0 0;
+        }
+        .Mobil-menu ul li{
+            margin-bottom: 24px;
+        }
+        .email{
+            font-size: var(--sm);
+            font-weight: 300 !important;
+        }
+        .Mobil-menu ul:nth-child(1){
+            border-bottom: 1px solid var(--Very-ight-pink);
+        }
+        .sing-out{
+            font-size: var(--sm);
+            color: var(--Hospital-green) !important;
+        }
+        /* Aside style*/
+        .Product-detail{
+            background-color: var(--White);
+            width: 360px;
+            padding: 0 24px;
+            position: absolute;
+            box-sizing: border-box;
+            right: 0;
+        }
+        .title{
+            font-size: var(--lg);
+            font-weight: bold;
+        }
+        .title_conteiner {
+            display: flex;
+        }
+        .title_conteiner img{
+            transform: rotate(180deg);
+            margin-right: 14px;
+        }
+        .Shopping-card{
+            display: grid ;
+            grid-template-columns: auto 1fr auto auto;
+            gap: 16px;
+            margin-bottom: 12px;
+            align-items: center;
+        }
+        .Shopping-card figure{
+            margin: 0;
+        }
+        .Shopping-card figure img{
+             width: 70px;
+             height: 70px;
+             border-radius: 20px;
+             object-fit: cover;
+        }
+        .Shopping-card p:nth-child(2){
+            color: var(--Very-ight-pink);
+        }
+        .Shopping-card p:nth-child(3){
+            font-size: var(--md);
+            font-weight: bold;
+        }
+        .My-Order-Content{
+            display: flex;
+            flex-direction: column;
+        }
+        .order{
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 16px;
+            align-items: center;
+            background-color: var(--Text-input-field);
+            margin-bottom: 24px;
+            border-radius: 8px;
+            padding: 0 24px;
+        }
+        .order p:nth-child(1){
+            display: flex;
+            flex-direction: column;
+        }
+        .order p span:nth-child(1){
+            font-size: var(--md);
+           font-weight: bold;
+        }
+        .order p:nth-child(2){
+            text-align: end;
+            font-weight: bold;
+        }
+           .primary-buttom{
+            background-color: var(--Hospital-green);
+            border-radius: 8px;
+            border:none;
+            color: var(--White);
+            cursor: pointer;
+            font-size: var(--md);
+            font-weight: bold;
+            height: 50px;
+            width: 100%;
+        }
+        .add-to-card-buttom{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }   
+
+        /* Media querys*/
+
         @media (max-width:640px) {
             .menu{
                 display: block;
@@ -133,5 +258,15 @@
             .navbar-mail{
                 display: none;
             }
+            .desktop-menu{
+                display: none;
+            }
+            .Product-detail{
+                width: 100%;
+            }
         }
-    
+        @media (min-width:641px) {
+            .Mobil-menu{
+                display: none;
+            }
+        }
