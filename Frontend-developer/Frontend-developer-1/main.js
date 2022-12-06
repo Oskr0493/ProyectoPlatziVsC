@@ -5,11 +5,14 @@ const mobileMenu= document.querySelector('.Mobil-menu');
 const menucarritoIcon=document.querySelector('.navbar-shopping-card');
 const shoppingCartContainer=document.querySelector('#shoppingCartContainer');
 const cardsContainer=document.querySelector('.cards-conteiner');
+const ProductDetailContainer= document.querySelector('#product-detail');
+const ProductDetailClose= document.querySelector('.product-detail-close');
 
 
 menuEmail.addEventListener('click',toggleDesktopMenu);
 menuHamIcon.addEventListener('click',togglemobileMenu);
 menucarritoIcon.addEventListener('click',toggleCarritoAside);
+ProductDetailClose.addEventListener('click',CloseProductDetailAside)
 
 
 function toggleDesktopMenu(){
@@ -26,6 +29,8 @@ function togglemobileMenu(){
     if(!isAsideClosed){
         shoppingCartContainer.classList.add('inactive')
 }
+
+    CloseProductDetailAside();
 
    mobileMenu.classList.toggle('inactive')
 
@@ -45,8 +50,21 @@ function toggleCarritoAside(){
     }
     
     shoppingCartContainer.classList.toggle('inactive')
- 
 
+    
+    const isProductDetailClosed=ProductDetailContainer.classList.contains('inactive');
+ 
+    if(!isProductDetailClosed){
+        ProductDetailContainer.classList.add('inactive');
+    }
+
+}
+function openProductdetailAside(){
+    shoppingCartContainer.classList.add('inactive');
+    ProductDetailContainer.classList.remove("inactive");
+}
+function CloseProductDetailAside(){
+    ProductDetailContainer.classList.add("inactive")
 }
 
 const productlist=[];
@@ -72,6 +90,7 @@ for(product of arr){
     productCard.classList.add('Product-card');
     const productImg=document.createElement('img');
     productImg.setAttribute('src',product.image);
+    productImg.addEventListener('click', openProductdetailAside);
     const productInfo=document.createElement('div');
     productInfo.classList.add('product-info');
     const productInfoDiv=document.createElement('div');
@@ -92,4 +111,4 @@ for(product of arr){
     cardsContainer.appendChild(productCard);
 }
 }
-renderProducts(productlist);
+renderProducts(productlist); 
